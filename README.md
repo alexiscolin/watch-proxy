@@ -3,6 +3,7 @@ Create a proxy to watch variables modifications
 
 Watch function let you create a proxy object in order to listen for properties values changes. Then, you can create an object with many properties, update them and trigger some functions if these properties are listened. This is useful to avoid regenerate the DOM for listening and let modules interact under the hood.
 
+[TODO]
 - [x] Add Method for remove listener
 - [ ] Multiple listeners for one property
 - [ ] Add destroy method (GC)
