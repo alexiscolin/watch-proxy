@@ -10,13 +10,13 @@ Watch function let you create a proxy object in order to listen for properties v
 - [ ] Add ES6 Proxy compatibility
 
 ## SYNTAX
-**``` let proxy = utils.watch({}); ```**
+**``` let proxy = watch({}); ```**
 
 ## USE
 
 ```javascript
 
-import { utils } from 'utils';
+import { watch } from 'watch-proxy';
 
 const obj = {
     value1: 0,
@@ -24,7 +24,7 @@ const obj = {
 }
 
 // create proxy
-let proxy = utils.watch(obj);
+let proxy = watch(obj);
 
 // add a listener on the proxy
 let listener = proxy.addListener('value1', function(){
