@@ -3,7 +3,7 @@
 /*  @param {object} obj - object with properties you wan to listen */
 /*  @return {object} proxy - proxy object you can change to be listened */
 /* */
-export default function(obj){
+export default watch = function(obj){
     const restricted = function(){};
     let proxy = new restricted();
     proxy.values = {};
