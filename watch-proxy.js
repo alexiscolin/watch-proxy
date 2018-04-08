@@ -29,8 +29,8 @@ export default watch = function(obj){
     // allocation listener function
     restricted.prototype.addListener = function(property, handler){
       for(let prop in proxy.values){
-        if(!proxy.values.hasOwnProperty(property)) throw "Watch function - listener variable '"+ property +"' don't exist on the proxy watcher";
-        proxy.values.hasOwnProperty(prop) && prop == property && (proxy.listening[prop] = handler);
+        if(!Object.prototype.hasOwnProperty.call(proxy.values, property)) throw "Watch function - listener variable '"+ property +"' don't exist on the proxy watcher";
+        Object.prototype.hasOwnProperty.call(proxy.values, prop) && prop == property && (proxy.listening[prop] = handler);
         return proxy.listening[prop];
       }
     };
@@ -38,7 +38,7 @@ export default watch = function(obj){
     // remove listener function
     restricted.prototype.removeListener = function(listener){
       for(let listened in proxy.listening){
-        if(proxy.listening.hasOwnProperty(listened) && proxy.listening[listened] === listener){
+        if(Object.prototype.hasOwnProperty.call(proxy.listening, listened) && proxy.listening[listened] === listener){
           proxy.listening[listened] = null;
           delete proxy.listening[listened];
         }
